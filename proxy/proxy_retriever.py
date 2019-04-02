@@ -32,5 +32,4 @@ class proxyRetriever:
         ip_list = []
         for item in data_set:
             ip_list.append(f'{item[0]}:{item[1]}')
-        print(ip_list)
         return ip_list

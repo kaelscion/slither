@@ -27,11 +27,7 @@ headers = {
     "User-Agent" : choice(new_slither.uas)
     }
     
-<<<<<<< HEAD
 requests.get('https://www.example.com', proxies={'https' : choice(new_slither.ips)}, headers=headers)
-=======
-requests.get('https://www.example.com', headers=headers, proxies=choice(new_slither.ips)
->>>>>>> b7a86bd0b14c6120b30710cb7cd0543a6cfff506
 ```
 This method also supports concurrency and adding an individual IP and/or UA to each thread or process that is spawned by your
 project! Accomplishing this is done as follows:
