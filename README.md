@@ -39,7 +39,7 @@ from slither import Slither
 from concurrent.futures import ThreadPoolExecutor, wait, as_completed
 
 #specify the number of threads your scraper will use as the "thread count".
-#To get all available IPs and User-Agent strings, pass "all" to `thread_count` rather than a number
+#To get all available IPs and User-Agent strings, pass "all" to `thread_count` rather than an int
 
 num_of_threads = 7
 futures = list_of_urls_to_scrape
