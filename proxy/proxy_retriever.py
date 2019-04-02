@@ -1,17 +1,22 @@
 import requests
-from random import choice
 
+from random import choices
+from proxy import Config
 from bs4 import BeautifulSoup
 
 class proxyRetriever:
 
-    def __init__(self):
+    def __init__(self, thread_count=1):
         self.s = requests.Session()
+        if thread_count == 'all':
+            self.thread_ips = self.clean_and_sort(self.connect_and_parse())
+        else:
+            self.thread_ips = choices(self.clean_and_sort(self.connect_and_parse()), k=thread_count)
 
     def __repr__(self):
-        return choice(self.clean_and_sort(self.connect_and_parse()))['Address']
+        return f'<ProxyRetriever object containing {len(self.thread_ips)} addresses>'
 
-    def connect_and_parse(self, website="https://www.free-proxy-list.net"):
+    def connect_and_parse(self, website=Config.PROXY_SOURCES[0]):
         r = self.s.get(website)
         soup = BeautifulSoup(r.text, "html.parser")
         proxy_table = soup.find('tbody')
@@ -24,8 +29,7 @@ class proxyRetriever:
 
     def clean_and_sort(self, data_set):
         columns = ['Address', 'Port', 'Country_Code', 'Country', 'Proxy_Type']
+        ip_list = []
         for item in data_set:
-            ip_list = []
-            ip_list.append({column : i.strip() for (column, i) in zip(columns, item)})
+            ip_list.append(item[0])
         return ip_list
-            
