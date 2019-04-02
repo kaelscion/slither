@@ -28,7 +28,6 @@ class proxyRetriever:
         return tds
 
     def clean_and_sort(self, data_set):
-        columns = ['Address', 'Port', 'Country_Code', 'Country', 'Proxy_Type']
         ip_list = []
         for item in data_set:
             ip_list.append(f'{item[0]}:{item[1]}')
