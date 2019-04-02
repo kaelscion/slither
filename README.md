@@ -25,7 +25,7 @@ headers = {
     "User-Agent" : Slither().ua
     }
     
-requests.get('https://www.example.com', headers=headers, proxies=Slither().ip)
+requests.get('https://www.example.com', proxies={'https' : choice(new_slither.ips)}, headers=headers)
 ```
 This method also supports concurrency and adding an individual IP and/or UA to each thread or process that is spawned by your
 project! Have fun and happy scraping!
