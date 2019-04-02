@@ -31,5 +31,6 @@ class proxyRetriever:
         columns = ['Address', 'Port', 'Country_Code', 'Country', 'Proxy_Type']
         ip_list = []
         for item in data_set:
-            ip_list.append(item[0])
+            ip_list.append(f'{item[0]}:{item[1]}')
+        print(ip_list)
         return ip_list
