@@ -21,13 +21,22 @@ import requests
 from random import choice
 from slither import Slither
 
-new_slither = Slither(thread_count=1)
-
+s = requests.Session()
+new_slither = Slither()
 headers = {
     "User-Agent" : choice(new_slither.uas)
     }
-    
-requests.get('https://www.example.com', proxies={'https' : choice(new_slither.ips)}, headers=headers)
+try:
+    ip = new_slither.ips.pop()
+    r = s.get('https://www.google.com', proxies={'https' : ip, 'http' : ip} , headers=headers)
+    print(r.status_code)
+except requests.exceptions.ProxyError:
+    print('Proxy Timed Out. Removing and Retrying')
+    ip = new_slither.ips.pop()
+    r = s.get('https://www.google.com', proxies={'https' : ip, 'http' : ip} , headers=headers)
+except IndexError:
+    print("We've run out of IPs and/or User-Agents! Re-run your script to get more!")
+
 ```
 This method also supports concurrency and adding an individual IP and/or UA to each thread or process that is spawned by your
 project! Accomplishing this is done as follows:
