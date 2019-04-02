@@ -43,12 +43,11 @@ from concurrent.futures import ThreadPoolExecutor, wait, as_completed
 
 num_of_threads = 7
 futures = list_of_urls_to_scrape
-#returns a dictionary of IPs and User-Agents
 new_slither = Slither(thread_count=num_of_threads)
 #returns a list of dictionaries of IPs and User-Agents
 for i in new_slither.masks:
-    #spawn your threads here assigning i['address'] to your thread's proxy parameter and i['user-agent'] to each thread's
-    #'User-Agent' header parameter
+    #spawn your threads here assigning i['address'] to your thread's proxy parameter and 
+    #i['user-agent'] to each thread's 'User-Agent' header parameter
     ...
         
         
