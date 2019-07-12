@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: slitherlib
+Version: 0.1.1
+Summary: A web-proxy IP and user agent anonymizing framework for web scrapers, penetration testers, and ethical hackers
+Home-page: https://github.com/kaelscion/slither
+Author: Jake Cahill
+Author-email: kaelscion@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+Requires-Dist: bs4
+
+UNKNOWN
+
+
