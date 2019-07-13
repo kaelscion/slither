@@ -3,7 +3,7 @@ A simple, easy to use framework for adding randomized, anonymous IP addresses an
 
 Slither is designed to add randomized User-Agent strings and Anonymous IP addresses from proxy sources around the web for use in your web scraping, penetration testing, or data aggregation projects. Please respect the owners and hardware of the data you are scraping. **I BEAR NO RESPONIBILITY IF YOU USE THIS SOFTWARE WITHOUT PERMISSION OR TO DO HARM TO WEB ASSETS. RESPECT THE DATA AND PLATFORMS. BE ETHICAL WITH YOUR SCRAPING AND UNDERSTAND THAT ALL ASSETS HAVE FINITE RESOURCES. DONT DDOS THINGS. ITS BAD.**
 
-**SLITHER IS ONYL COMPATIBLE WITH PYTHON 3. NO SUPPORT FOR PYTHON 2 IS PLANNED**. That being said, to install on a machine with only Python 3 installed:
+**SLITHER IS ONLY COMPATIBLE WITH PYTHON 3. NO SUPPORT FOR PYTHON 2 IS PLANNED**. That being said, to install on a machine with only Python 3 installed:
 
 `pip install slitherlib`
 
